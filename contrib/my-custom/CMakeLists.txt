@@ -1,0 +1,44 @@
+build_lib(
+    LIBNAME my-custom
+    SOURCE_FILES
+        tags/application-id-tag.cc
+        tags/flow-type-tag.cc
+        tags/send-time-tag.cc
+        tags/enqueue-time-tag.cc
+        tags/mpd-tag.cc
+        helper/throughput-tracker.cc
+        helper/drop-tracker.cc
+        helper/application-trace.cc
+        topologies/dumbbell-topology.cc
+        queues/fairq2s-queue-disc.cc
+        queues/rtqs-queue-disc.cc
+        applications/realtime-application.cc
+        applications/non-realtime-application.cc
+        applications/other-application.cc
+        applications/my-application.cc
+    HEADER_FILES
+        tags/application-id-tag.h
+        tags/flow-type-tag.h
+        tags/send-time-tag.h
+        tags/enqueue-time-tag.h
+        tags/mpd-tag.h
+        helper/my-mapping.h
+        helper/throughput-tracker.h
+        helper/drop-tracker.h
+        helper/application-trace.h
+        topologies/dumbbell-topology.h
+        queues/fairq2s-queue-disc.h
+        queues/rtqs-queue-disc.h
+        applications/realtime-application.h
+        applications/non-realtime-application.h
+        applications/other-application.h
+        applications/my-application.h
+    LIBRARIES_TO_LINK
+        ${libcore}
+        ${libnetwork}
+        ${libinternet}
+        ${libapplications}
+        ${libflow-monitor}
+        ${libpoint-to-point}
+        ${libtraffic-control}
+)
